@@ -10,3 +10,8 @@ THe following steps are done during build:
 - The Zope authentication system at root level is replaced by a [PluggableAuthService](https://github.com/zopefoundation/Products.PluggableAuthService)
 
 On every restart of the container, the root password of the Zope system is replaced by the one provided as environmental variable `ZOPE_ROOT_PASSWORD`.  
+
+The most recent image can be downloaded from [DockerHub](https://hub.docker.com/r/svenkleinert/pxd-ihs-zope) via:
+```bash
+docker pull svenkleinert/pxd-ihs-zope:latest
+```
