@@ -1,5 +1,5 @@
-FROM python:3.12
-ENV ZOPE_VERSION="5.9"
+FROM python:3.13.5
+ENV ZOPE_VERSION="5.13"
 
 WORKDIR /usr/local/share/ihs
 
