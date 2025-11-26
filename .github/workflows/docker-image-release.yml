@@ -29,8 +29,8 @@ jobs:
     - name: Build the Docker image
       env:
           TAG: ${{ steps.tag-selector.outputs.TAG }}
-      run: docker build -t ghcr.io/${{ github.repository_owner }}/pxd-ihs-zope:$TAG .
+      run: docker build -t ghcr.io/phoenixd-ihs/pxd-ihs-zope:$TAG .
 
     - name: Push Docker image
       if: ${{ github.event_name != 'pull_request' }}
-      run: docker push ghcr.io/${{ github.repository_owner }}/pxd-ihs-zope:$TAG
+      run: docker push ghcr.io/phoenixd-ihs/pxd-ihs-zope:$TAG
