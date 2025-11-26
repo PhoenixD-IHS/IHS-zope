@@ -36,6 +36,7 @@ jobs:
       run: docker push svenkleinert/pxd-ihs-zope:$TAG
 
     - name: Add comment to PR
+      if: ${{ github.event_name == 'pull_request' }}
       env:
         TAG: ${{ steps.tag-selector.outputs.TAG }}
       uses: actions/github-script@v8
