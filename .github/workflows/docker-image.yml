@@ -30,10 +30,16 @@ jobs:
         TAG: ${{ steps.tag-selector.outputs.TAG }}
       run: docker build -t svenkleinert/pxd-ihs-zope:$TAG .
 
+    - name: Tag Docker image
+      if: ${{ github.event_name == 'release' }}
+      env:
+        TAG: ${{ steps.tag-selector.outputs.TAG }}
+      run: docker tag svenkleinert/pxd-ihs-zope:$TAG svenkleinert/pxd-ihs-zope:latest
+
     - name: Push Docker image
       env:
         TAG: ${{ steps.tag-selector.outputs.TAG }}
-      run: docker push svenkleinert/pxd-ihs-zope:$TAG
+      run: docker push svenkleinert/pxd-ihs-zope
 
     - name: Add comment to PR
       if: ${{ github.event_name == 'pull_request' }}
