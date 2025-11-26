@@ -27,8 +27,10 @@ jobs:
           
     - name: Build the Docker image
       env:
-          TAG: ${{ steps.tag-selector.outputs.TAG }}
+        TAG: ${{ steps.tag-selector.outputs.TAG }}
       run: docker build -t svenkleinert/pxd-ihs-zope:$TAG .
 
     - name: Push Docker image
+      env:
+        TAG: ${{ steps.tag-selector.outputs.TAG }}
       run: docker push svenkleinertpxd-ihs-zope:$TAG
