@@ -39,7 +39,7 @@ jobs:
     - name: Push Docker image
       env:
         TAG: ${{ steps.tag-selector.outputs.TAG }}
-      run: docker push svenkleinert/pxd-ihs-zope
+      run: docker push --all-tags svenkleinert/pxd-ihs-zope
 
     - name: Add comment to PR
       if: ${{ github.event_name == 'pull_request' }}
