@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
+      pull-requests: write
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -53,5 +53,5 @@ jobs:
             owner: context.repo.owner,
             issue_number: context.issue.number,
             repo: context.repo.repo,
-            body: "image with tag ${process.env.TAG} created available at https://hub.docker.com/repository/docker/svenkleinert/pxd-ihs-zope/tags/${process.env.TAG}/"
+            body: "image with tag '" + process.env.TAG + "' created, see https://hub.docker.com/repository/docker/svenkleinert/pxd-ihs-zope/tags/" + process.env.TAG + "/"
           })
