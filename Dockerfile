@@ -85,8 +85,9 @@ RUN \
 mv /usr/local/share/ihs/ihs-instances /usr/local/share/ihs/ihs-instances.templates && \
 mkdir -p /usr/local/share/ihs/ihs-instances
 
-# copy entrypoint
+# copy entrypoint and healthcheck
 COPY zope_files/entrypoint.sh /
+COPY zope_files/healthcheck.py /
 
 EXPOSE 8080/tcp
 
