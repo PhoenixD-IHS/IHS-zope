@@ -1,4 +1,4 @@
-FROM python:3.13.9-slim AS builder
+FROM python:3.13.11-slim AS builder
 ENV ZOPE_VERSION="5.13"
 
 ENV WHEEL_VERSION="0.45.1"
